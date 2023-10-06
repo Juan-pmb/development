@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biblioteca de Libros</title>
+</head>
+<body>
+    <h1>Libros</h1>
+    
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo">
+    <br>
+    
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor">
+    <br>
+
+    <button type="button" onclick="agregarLibro()">Agregar Libro</button>
+    <button type="button" onclick="eliminarLibro()">Eliminar Libro</button>
+    
+    <div id="biblioteca">
+        <h2>Biblioteca</h2>
+        <ul id="listaLibros"></ul>
+    </div>
+
+    <script>
+        const biblioteca = [];
+        const listaLibros = document.getElementById("listaLibros");
+
+        function agregarLibro() {
+            const titulo = document.getElementById("titulo").value;
+            const autor = document.getElementById("autor").value;
+            
+            if (biblioteca.length < 10 && titulo !== "" && autor !== "") {
+                biblioteca.push({ titulo, autor });
+                actualizarLista();
+            } else {
+                alert("No se pudo agregar el libro. Verifica los campos o si la biblioteca está llena.");
+            }
+        }
+
+        function eliminarLibro() {
+            if (biblioteca.length > 0) {
+                biblioteca.pop();
+                actualizarLista();
+            } else {
+                alert("La biblioteca está vacía. No hay libros para eliminar.");
+            }
+        }
+
+        function actualizarLista() {
+            listaLibros.innerHTML = "";
+            for (const libro of biblioteca) {
+                const li = document.createElement("li");
+                li.textContent = `Título: ${libro.titulo}, Autor: ${libro.autor}`;
+                listaLibros.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
