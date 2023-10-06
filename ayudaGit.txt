@@ -8,3 +8,9 @@ git push -u origin main
 
 
 git init
+
+
+--Actualizar el repositorio:
+
+git add . 
+git commit -m "Segunda actualizacion"
