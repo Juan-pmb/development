@@ -15,12 +15,6 @@
  /*Implementar un código donde emplée callback. Recibir un número y sí el número es mayor a 10
   Calcular e imprimir en otra función la suma de los números del 1 al 100*/
 
-
-
-
-
-
-
   function suma (numero) { 
 
     if (numero > 10 ) { 

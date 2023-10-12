@@ -11,6 +11,9 @@ git init
 
 
 --Actualizar el repositorio:
-
 git add . 
 git commit -m "Segunda actualizacion"
+git push -u origin master
+
+-Clonar
+git clone https://github.com/dalzlad/repasoJS_2670689.git
